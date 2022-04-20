@@ -24,7 +24,7 @@ import javax.swing.JTextArea;
 import javax.swing.JToolBar;
 
 
-public class frame extends JFrame {
+public class gameFrame extends JFrame {
 	private JButton backgroundColorPicker, fontColorPicker, insertPic;
 	private JTextArea textArea;
 	private File openFile;
@@ -33,9 +33,8 @@ public class frame extends JFrame {
 	private JMenuItem addSheet, save, saveAs, export, loadText;
 	private JComboBox<String> fontComboBox, sizeComboBox, styleComboBox;
 	private JToolBar toolPanel;
-
 	
-	public frame() {
+	public gameFrame() {
 		super("Text Editor");
 		//openBtn = new JButton("Open");
 		
@@ -68,7 +67,7 @@ public class frame extends JFrame {
 
 	// 設定打字區域的字型
 	private void setTextAreaFont() {
-		fontComboBox = new Jco;
+		fontComboBox = new 
 	}
 	
 	// 設定打字區域的字體大小
@@ -124,7 +123,7 @@ public class frame extends JFrame {
 	}
 	
 	// load text
-	private void loadText()) {
+	private void loadText() {
 		
 	}
 	

@@ -4,13 +4,18 @@ import java.io.BufferedInputStream;
 import java.io.FileOutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Scanner;
 
 // 把網頁另存成pdf
 //w3c.org
 
 public class chloe85 {
 	public static void main(String[] args) {
-		String target = "http://www.bradchao.com";
+		//String target = "http://www.bradchao.com";
+		Scanner sc = new Scanner(System.in);
+		System.out.println("輸入要下載的網址：");
+		String target = sc.next();
+		
 		try {
 			URL url = new URL("https://pdfmyurl.com/?url=" + target);
 			HttpURLConnection conn = (HttpURLConnection)url.openConnection();

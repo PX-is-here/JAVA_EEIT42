@@ -1,0 +1,7 @@
+# Project exclude paths
+/out/
+/bin/
+.classpath
+.project
+.settings/org.eclipse.core.resources.prefs
+/target/

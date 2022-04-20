@@ -105,7 +105,7 @@ public class Tank extends JFrame {
 	private class myThread1 extends Thread implements Serializable {
 		@Override
 		public void run() {
-			musicEffect();//bull music
+			musicEffect(); // bull music
 		}
 	}
 	
@@ -317,7 +317,7 @@ public class Tank extends JFrame {
 			}
 			
 			try{
-				timer.schedule(rockG, 1000,1000*1);
+				timer.schedule(rockG, 1000, 1000*1);
 			} catch(IllegalStateException e) {
 					System.out.println("錯在這裡3");
 					e.getStackTrace();
@@ -390,7 +390,7 @@ public class Tank extends JFrame {
 			}		
 		}
 		
-		public class DownAction extends AbstractAction implements Serializable {
+		public class DownAction extends AbstractAction {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(tankY < viewH - tankImg.getHeight()) {
@@ -399,7 +399,7 @@ public class Tank extends JFrame {
 			}		
 		}
 		
-		public class LeftAction extends AbstractAction implements Serializable {
+		public class LeftAction extends AbstractAction {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(tankX > 0) {
@@ -408,7 +408,7 @@ public class Tank extends JFrame {
 			}		
 		}
 		
-		public class RightAction extends AbstractAction implements Serializable {
+		public class RightAction extends AbstractAction {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(tankX < viewW - tankImg.getWidth()) {
@@ -417,7 +417,7 @@ public class Tank extends JFrame {
 			}		
 		}
 		
-		public class attackAction extends AbstractAction implements Serializable {
+		public class attackAction extends AbstractAction {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				createBull(0, 30);
@@ -541,6 +541,7 @@ public class Tank extends JFrame {
 						it.remove();
 					}
 				}
+				
 				for(Iterator<ImgObj> it = bullobjs.iterator(); it.hasNext();) {
 					
 					temp1 = it.next();

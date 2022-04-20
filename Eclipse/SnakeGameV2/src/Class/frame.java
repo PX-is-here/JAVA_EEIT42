@@ -21,8 +21,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import MyClass.myDigitalClock;
-import MyClass.MyPanel;
+import Class.myDigitalClock;
+import Class.SQLconnection;
 
 
 public class frame extends JFrame {
@@ -80,8 +80,10 @@ public class frame extends JFrame {
 	private void sqlinsertInto() {
 		
 		String sql = "INSERT INTO SnakeGame" + " (name, age, gender, country)" + " VALUES(?,?,?,?)";
-		
+		PreparedStatement pstmt = ;
 		try {
+			
+			
 			pstmt.setString(1, name.getText());
 			pstmt.setString(2, age.getText());
 			pstmt.setString(3, gender.getText());

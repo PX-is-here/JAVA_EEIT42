@@ -22,12 +22,11 @@ public class screenGame extends JFrame{
 			JPanel panel1 = new JPanel();
 			
 			//圖片導入
-			pic = new ImageIcon("dir1/min.gif");
+			pic = new ImageIcon("dir1/main.gif");
 			//加載存放
 			lab = new JLabel(text,pic,JLabel.CENTER);
 			lab.setFont(new Font(null, Font.BOLD, 55));//剩餘次數大小
 			lab.setHorizontalTextPosition(JLabel.CENTER);
-			
 			
 			//滑鼠點擊的事件
 			lab.addMouseListener(new MListener());
@@ -40,7 +39,6 @@ public class screenGame extends JFrame{
 			try {
 				run();
 			} catch (Exception e) {
-				
 			}
 		}
 		
@@ -55,7 +53,7 @@ public class screenGame extends JFrame{
 		}
 		
 		//圖片移動的軌跡
-		public void run(){
+		public void run() {
 			int y = 10;
 			int x = 10;
 			boolean yb = false;

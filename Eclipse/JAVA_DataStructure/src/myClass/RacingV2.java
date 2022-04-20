@@ -82,7 +82,7 @@ public class RacingV2 extends JFrame {
 				if(i==99) stopGame();
 				
 				try {
-					Thread.sleep(10 + (int)(Math.random()*200));
+					Thread.sleep(10 + (int)(Math.random()*200));  // 10 ~ 199
 				} catch (InterruptedException e) {
 					break;
 				} 

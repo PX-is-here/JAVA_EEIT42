@@ -6,7 +6,9 @@ import java.net.InetAddress;
 import java.net.SocketException;
 import java.nio.charset.StandardCharsets;
 
+//chloe78 & chloe79
 // UDP
+//自己在自己的網域自己傳給自己
 
 public class chloe79 {
 	public static void main(String[] args) {

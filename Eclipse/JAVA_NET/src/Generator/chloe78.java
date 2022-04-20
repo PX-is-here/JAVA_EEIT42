@@ -6,8 +6,10 @@ import java.net.InetAddress;
 import java.net.SocketException;
 import java.nio.charset.StandardCharsets;
 
+// chloe78 & chloe79
 // 之前在 Mediatek 的 BBS 聊天程式 => 就是這樣可以傳訊息給人
 // UDP => 若無人接收就丟棄
+// 自己在自己的網域自己傳給自己
 
 public class chloe78 {
 	public static void main(String[] args) {

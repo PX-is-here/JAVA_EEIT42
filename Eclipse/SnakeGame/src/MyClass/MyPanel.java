@@ -30,24 +30,26 @@ import Generator.myMotion;
 import Generator.myMotion;
 
 public class MyPanel extends JPanel implements ActionListener {
-    private final int RAND_POS = 11;
-    private final int DELAY = 300;
-    private final int DOT_SIZE = 70;
-    private final int TOTAL_DOTS = 144;  // 840*840 div 70*70 => the maximum number of possible dots on the board
+    private final int RAND_POS = 11;  // is used to calculate a random position for a ball
+    private final int DELAY = 900;  // determines the speed of the game
+    private final int DOT_SIZE = 70;  // the size of the ball and the dot of the snake
+    private final int TOTAL_DOTS = 144;  // 840 * 840 div 70 * 70 = 144 => the maximum number of possible dots on the board
     public final int B_WIDTH = 840;
     public final int B_HEIGHT = 840;
     
     private int x[] = new int[TOTAL_DOTS];
     private int y[] = new int[TOTAL_DOTS];
     
-    private int dots; private int eX; private int eY; private int score;
+    private int dots; private int eX; private int eY;
     private int id;
     
-	private boolean leftDir = false; private boolean rightDir = true;
-	private boolean upDir = false; private boolean downDir = false;
+	private boolean leftDir = false; 
+	private boolean rightDir = true;
+	private boolean upDir = false; 
+	private boolean downDir = false;
 	private boolean inGame = true;
 
-	private Image elephant; private Image head; private Image unitBody;
+	private Image ball; private Image head; private Image unitBody;
 
 	private Timer timer;
 	
@@ -137,7 +139,7 @@ public class MyPanel extends JPanel implements ActionListener {
 	
 	private void loadObj() {
 		try {
-			elephant = ImageIO.read(new File("dir1/ball2.png"));
+			ball = ImageIO.read(new File("dir1/ball2.png"));
 			head = ImageIO.read(new File("dir1/ball0.png"));
 			unitBody = ImageIO.read(new File("dir1/ball1.png"));
 		} catch (Exception e) {
@@ -147,20 +149,19 @@ public class MyPanel extends JPanel implements ActionListener {
 	
 	private void initGame() {
 		dots = 3;  // 1head + 2unitbody
-		score = 0;
 		for(int i = 0; i < dots; i++) {  // default Snake location
 			x[i] = 350 - i * 10;
 			y[i] = 350;
 		}
-		locElephant();
+		locBall();
 	}
 	
-	private void locElephant() {
+	private void locBall() {
 		int ran1 = (int)(Math.random() * RAND_POS);
 		int ran2 = (int)(Math.random() * RAND_POS);
 		eX = (ran1 * DOT_SIZE);
 		eY = (ran2 * DOT_SIZE);
-		System.out.println("Elephant location: " + "X: " + eX + " " + "Y: " + eY);
+		System.out.println("Ball location: " + "X: " + eX + " " + "Y: " + eY);
 	}
 	
 	public void setInGame() {
@@ -174,7 +175,7 @@ public class MyPanel extends JPanel implements ActionListener {
 		
 		if(inGame) {
 //			System.out.println("aaa");
-			g2d.drawImage(elephant, eX, eY, this);
+			g2d.drawImage(ball, eX, eY, this);
 			
 			for(int i = 0; i < dots; i++) {
 				if(i == 0) {
@@ -213,10 +214,10 @@ public class MyPanel extends JPanel implements ActionListener {
 		sqlUpdate();
 	}
 	
-	private void checkElephant() {
+	private void checkBall() {
 		if((x[0] == eX) && (y[0] == eY)) {
 			dots++;
-			locElephant();
+			locBall();
 		}
 	}
 
@@ -272,7 +273,7 @@ public class MyPanel extends JPanel implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(inGame) {
-			checkElephant();
+			checkBall();
 			checkCollision();
 			move();
 		}			

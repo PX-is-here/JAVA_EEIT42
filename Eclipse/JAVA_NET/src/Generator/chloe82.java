@@ -7,6 +7,7 @@ import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+// chloe81 & chloe82
 // TCP 接收端 (Input)
 // Brad receiver 等我傳圖檔給他
 // UDP 不適合傳圖檔
